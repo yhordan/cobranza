@@ -25,7 +25,7 @@ import com.leonxiiicobranza.cobranza.modelo.app_usuarios;
 public class JwtUtil {
 
 
-    private final String secret_key = "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=";
+    private final String secretkey = "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=";
     private long accessTokenValidity = 1*60*1000; //10 min
     //minutes * 60 * 1000;
     //60 * 60 * 1000; // 1 hour
@@ -77,7 +77,7 @@ public class JwtUtil {
     }
  
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(secret_key);
+        byte[] keyBytes = Decoders.BASE64.decode(secretkey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
