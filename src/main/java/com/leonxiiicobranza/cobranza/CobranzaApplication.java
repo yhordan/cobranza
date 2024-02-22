@@ -15,7 +15,6 @@ public class CobranzaApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		String disabledAlgorithms = Security.getProperty("jdk.tls.disabledAlgorithms");
-		System.out.print("mira " +disabledAlgorithms);
 		Security.setProperty("jdk.tls.disabledAlgorithms", disabledAlgorithms .replace("TLSv1,", ""));
 		SpringApplication.run(CobranzaApplication.class, args);
 	}

@@ -37,7 +37,7 @@ public class app_pagare_gestorjudController {
 	@PostMapping("/buscar/{codigo}")
 	public ResponseEntity<List<app_cuenta_credito>> obtenerpagares(@PathVariable String codigo) throws Exception{
 		
-		//List<app_cuenta_credito>  lista_cuentas_creditos=null;
+		
 	   List<app_cuenta_credito> lista_cuentas_creditos = new ArrayList<app_cuenta_credito>();
 		
 		
@@ -46,10 +46,9 @@ public class app_pagare_gestorjudController {
 		
 		lista_idpagares.forEach(
 				x->{
-					//findByIdagenciapagareAndIdocpagareAndNrodocpagareAndTipomoneda
+					
 					List<app_cuenta_credito>  lista_pagares =daocc.findByIdagenciapagareAndIddocpagareAndNrodocpagareAndTipomoneda(x.getIdagenciap(),x.getIdsdocp(),x.getNrodocp(),x.getTipomonedap());
-					//System.out.print(x.getIdanalista() +"tamaño :"+lista_pagares.size()+" " );
-					 //lista_cuentas_creditos=lista_pagares;
+					
 					 lista_pagares.forEach( pagare->
 					 				            {   if(pagare.getIdestadodoc().getIdestadodoc().trim().equals("11") || pagare.getIdestadodoc().getIdestadodoc().trim().equals("12") || pagare.getIdestadodoc().getIdestadodoc().trim().equals("13") )
 					 				            	{lista_cuentas_creditos.add(pagare);}

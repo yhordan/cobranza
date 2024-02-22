@@ -44,35 +44,9 @@ public class HomeController {
 			
 		    List<app_cuenta_credito> lista_cuentas_creditos;
 			
-		///	if(codigo.equals("0060041"))
-	//		{
+		
 				lista_cuentas_creditos=dao.findAll();
-	//		}
-		/*	else
-			{
-				
-			lista_cuentas_creditos = new ArrayList<app_cuenta_credito>();
-			List<app_analista_gestorcob>  lista_analistas= Service.findByIdgestor(codigo);
-			
-			lista_analistas.forEach(
-					x->{
-						List<app_cuenta_credito>  lista_pagares =Servicecc.findByIdanalista(x.getIdanalista());
-						//System.out.print(x.getIdanalista() +"tamaño :"+lista_pagares.size()+" " );
-						 //lista_cuentas_creditos=lista_pagares;
-						 lista_pagares.forEach( pagare->
-						 				            {
-						 				            	if(!pagare.getIdestadodoc().getIdestadodoc().trim().equals("11") && !pagare.getIdestadodoc().getIdestadodoc().trim().equals("12")&& !pagare.getIdestadodoc().getIdestadodoc().trim().equals("13") )
-						 				            	
-						 				            	
-						 				            	{lista_cuentas_creditos.add(pagare);}
-						 				            	
-						 				            	
-						 				            }							 
-								 );				
-								
-					}
-					);
-			}*/
+	
 		
 			return new ResponseEntity<>(lista_cuentas_creditos,HttpStatus.OK);
 		}

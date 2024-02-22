@@ -37,12 +37,7 @@ public class JwtUtil {
     private final String TOKEN_HEADER = "Authorization";
     private final String TOKEN_PREFIX = "Bearer ";
 
-    /*
-    public JwtUtil(){
-    	//  this.jwtParser=Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(jwt);
-       // this.jwtParser = Jwts.parser().setSigningKey(secret_key);
-    }*/
-
+   
     
     public String createToken(app_usuarios per) {
     	
@@ -61,10 +56,7 @@ public class JwtUtil {
         
         Claims claims = Jwts.claims(map).setSubject(per.getLogin());
         
-        //claims.put("correo",per.getCorreo());
-        //claims.put("nombre",per.getNombre());
-        
-        //claims.put("lastName",user.getLastName());
+    
         Date tokenCreateTime = new Date();
         Date tokenValidity = new Date(tokenCreateTime.getTime() + TimeUnit.MINUTES.toMillis(300));//TimeUnit.SECONDS.toMillis(30));
         return Jwts.builder().claim("correo",per.getCorreo())

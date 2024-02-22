@@ -54,7 +54,7 @@ public class app_morososController {
 	
 	@GetMapping("/listar_detalle_visitas/{fehca_inicial}/{fehca_final}")
 	public ResponseEntity<List<app_morosovisitas>> listar_detalle_fechas(@PathVariable String fehca_inicial,@PathVariable String fehca_final) {		
-		//System.out.print("fechasini "+fehca_inicial);
+		
 		List<app_morosovisitas> listaxfechas = daov.listar_detallex_fecha(fehca_inicial,fehca_final);
 		List<app_usuarios> listar_usuarios = dao_u.findAll();
 		
@@ -76,7 +76,7 @@ public class app_morososController {
 	 boolean buscar (app_morosovisitas x,List<app_usuarios> lista)
 	{
 		boolean valor=true;
-		// listar_usuarios.forEach( y -> y)
+		
 		 for(app_usuarios objeto : lista) {
 			 {
 				 if(objeto.getIdpersona().equals(x.getIdgestor()))
@@ -111,20 +111,17 @@ public class app_morososController {
 	
 	@PostMapping("/crear")
 	public ResponseEntity<app_morosos> crearAfp(@RequestBody app_morosos moroso){
-		//if(afpServicio.validarAfp(afp.getCodigo(), afp.getDecripcion_afp()) == null) {
+		
 		
 		 LocalDateTime datetime = LocalDateTime.now();
          DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
          String formatDateTime = datetime.format(format);  
-        /* DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-         LocalDateTime dateTime = LocalDateTime.parse(formatDateTime, formatter);
-         */			        
+       	        
            LocalDateTime today = LocalDateTime.parse(formatDateTime.replace(" ","T"));
-         //  ZoneId defaultZoneId = ZoneId.systemDefault();
-         //  System.out.print("\n fecha:"+today.atStartOfDay(defaultZoneId).toInstant());
+        
 		    moroso.setFechar(today);
 			return new ResponseEntity<>(dao.save(moroso), HttpStatus.CREATED);
-		//}else {return null;}
+		
 	}
 	
 	@PostMapping("/crear_visita")
@@ -133,11 +130,7 @@ public class app_morososController {
 		 int width = 3;
 		 String codigo="";
 		 app_morosos  moroso1=null;
-		//System.out.print(dao.findByIdmoroso(moroso.getMorosos().getIdmoroso()));
-		
-		
-	
-		       //  if( dao.findByIdmoroso(moroso.getMorosos().getIdmoroso())==null)
+	  
 		    moroso1 = dao.findByTipomonedapAndNrodocpAndIdagenciapAndIddocp(moroso.getMorosos().getTipomonedap(),moroso.getMorosos().getNrodocp(),moroso.getMorosos().getIdagenciap(),moroso.getMorosos().getIddocp());
 		           if(moroso1 ==null)
 		         {
@@ -161,10 +154,10 @@ public class app_morososController {
 		         {
 		        	 String numero1 = String.format("%0" + width + "d", Integer.valueOf(dao.obtener_maximo_valor_id_mrorvisita(codigo+"%"))+1);
 			         moroso.getMorosovisitas().setIdmorosovisita(moroso1.getIdmoroso()+numero1);
-			        // System.out.print("format:"+moroso.getMorosovisitas());
+			        
 			      
 					moroso.getMorosovisitas().setNrovisita(numero1);
-				    // System.out.print("\n id:"+moroso.getMorosovisitas().getIdmorosovisita());
+				    
 			     }
 	            else
 	           {
