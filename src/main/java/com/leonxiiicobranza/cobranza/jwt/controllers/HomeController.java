@@ -1,6 +1,6 @@
 package com.leonxiiicobranza.cobranza.jwt.controllers;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.leonxiiicobranza.cobranza.DAO.app_cuenta_creditoDao;
-import com.leonxiiicobranza.cobranza.modelo.app_analista_gestorcob;
 import com.leonxiiicobranza.cobranza.modelo.app_cuenta_credito;
 import com.leonxiiicobranza.cobranza.servicio.app_analista_gestorcobService;
 import com.leonxiiicobranza.cobranza.servicio.app_cuenta_creditoService;

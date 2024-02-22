@@ -1,10 +1,9 @@
 package com.leonxiiicobranza.cobranza.Controlador;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 import javax.swing.text.MaskFormatter;
@@ -12,7 +11,6 @@ import javax.swing.text.MaskFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -122,7 +120,7 @@ public class app_morososController {
          LocalDateTime dateTime = LocalDateTime.parse(formatDateTime, formatter);
          */			        
            LocalDateTime today = LocalDateTime.parse(formatDateTime.replace(" ","T"));
-           ZoneId defaultZoneId = ZoneId.systemDefault();
+         //  ZoneId defaultZoneId = ZoneId.systemDefault();
          //  System.out.print("\n fecha:"+today.atStartOfDay(defaultZoneId).toInstant());
 		    moroso.setFechar(today);
 			return new ResponseEntity<>(dao.save(moroso), HttpStatus.CREATED);
