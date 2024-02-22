@@ -27,7 +27,7 @@ import com.leonxiiicobranza.cobranza.servicio.app_cuenta_creditoService;
 
 import org.springframework.data.domain.Pageable;
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_analista_gestorcob")
 public class app_analista_gestorcobController {

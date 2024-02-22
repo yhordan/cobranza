@@ -18,7 +18,7 @@ import com.leonxiiicobranza.cobranza.servicio.app_cuotas_creditoService;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_cuotas_credito")
 public class app_cuotas_creditoController {

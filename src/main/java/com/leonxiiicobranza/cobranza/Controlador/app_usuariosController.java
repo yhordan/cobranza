@@ -19,7 +19,7 @@ import com.leonxiiicobranza.cobranza.modelo.app_usuarios;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_usuarios")
 public class app_usuariosController {

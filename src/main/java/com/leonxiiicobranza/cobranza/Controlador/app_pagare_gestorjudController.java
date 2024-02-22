@@ -20,7 +20,7 @@ import com.leonxiiicobranza.cobranza.servicio.app_pagare_gestorjudService;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_gestor_judicial")
 public class app_pagare_gestorjudController {

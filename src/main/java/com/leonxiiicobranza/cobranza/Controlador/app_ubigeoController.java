@@ -15,7 +15,7 @@ import com.leonxiiicobranza.cobranza.modelo.app_ubigeo;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_ubigeo")
 public class app_ubigeoController {

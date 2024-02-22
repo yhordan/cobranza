@@ -17,7 +17,7 @@ import com.leonxiiicobranza.cobranza.modelo.app_fiador;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/fiador")
 public class app_fiadorControlador {

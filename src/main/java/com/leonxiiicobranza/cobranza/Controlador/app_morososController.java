@@ -31,7 +31,7 @@ import com.leonxiiicobranza.cobranza.modelo.dto_morosidad;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/moroso")
 public class app_morososController {

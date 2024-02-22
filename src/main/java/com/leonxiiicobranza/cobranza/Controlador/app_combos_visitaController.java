@@ -21,7 +21,7 @@ import com.leonxiiicobranza.cobranza.modelo.app_tablas;
 
 
 
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/app_combos_visita")
 public class app_combos_visitaController {
